@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - Larissa Iamara</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.6;">
+
+    <header style="background-color: #2185bd; color: white; text-align: center; padding: 30px;">
+        <h1>Sobre Mim</h1>
+        <p>Conheça um pouco mais sobre Larissa Iamara</p>
+    </header>
+
+    <nav style="text-align: center; margin: 20px;">
+        <a href="index.html">Início</a> |
+        <a href="sobre.html">Sobre Mim</a>
+    </nav>
+
+    <main style="max-width: 700px; margin: auto; padding: 20px; background-color: white;">
+        <section>
+        …
