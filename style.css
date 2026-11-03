@@ -1,0 +1,118 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E TEXTOS
+   ========================================================================== */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Seletor de classe obrigatório */
+.destaque-texto {
+    font-weight: bold;
+    color: #1a237e;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E TÍTULOS
+   ========================================================================== */
+header {
+    background-color: #1a237e;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #1a237e;
+    border-bottom: 2px solid #1a237e;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* ==========================================================================
+   3. SEÇÕES E ESPAÇAMENTOS
+   ========================================================================== */
+section {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   4. IMAGEM PESSOAL
+   ========================================================================== */
+img, .foto-perfil {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 4px solid #1a237e;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* ==========================================================================
+   5. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+form {
+    background-color: #f9f9f9;
+    border: 1px dashed #1a237e;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    border-color: #1a237e;
+    outline: none;
+}
+
+/* ==========================================================================
+   6. NAVEGAÇÃO E RODAPÉ
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333333;
+    color: white;
+    margin-top: 40px;
+}
+
+a {
+    color: #1a237e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Pseudoclasse obrigatória */
+a:hover {
+    color: #ffeb3b;
+    text-decoration: underline;
+}
