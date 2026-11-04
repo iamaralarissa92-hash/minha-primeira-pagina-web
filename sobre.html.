@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Mim - Larissa Iamara</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; line-height: 1.6;">
+<body>
 
-    <header style="background-color: #2185bd; color: white; text-align: center; padding: 30px;">
+    <header>
         <h1>Sobre Mim</h1>
         <p>Conheça um pouco mais sobre Larissa Iamara</p>
     </header>
 
-    <nav style="text-align: center; margin: 20px;">
-        <a href="index.html">Início</a> |
+    <nav>
+        <a href="index.html">Início</a> | 
         <a href="sobre.html">Sobre Mim</a>
     </nav>
 
-    <main style="max-width: 700px; margin: auto; padding: 20px; background-color: white;">
-        <section>
-        …
+    <main>
+        <section class="section-destaque">
+            <h2>Minha História</h2>
+            <p>Escreva aqui um parágrafo rápido contando um pouco sobre você, seus objetivos ou o que está estudando!</p>
+        </section>
+    </main>
+
+</body>
+</html>
+
+
+
