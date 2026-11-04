@@ -215,4 +215,22 @@ h2 {
     margin-top: 50px;
     font-size: 0.85rem
        border-top: 4px solid #3498db;
+}/*---------------------------------------------
+    REQUISITO 5: FORMULÁRIO DE CONTATO
+---------------------------------------------*/
+input[type="text"], 
+input[type="email"], 
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input:focus, 
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
 }
