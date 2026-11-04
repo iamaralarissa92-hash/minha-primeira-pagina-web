@@ -233,4 +233,19 @@ input:focus,
 textarea:focus {
     border-color: #3498db;
     outline: none;
+}/*---------------------------------------------
+    REQUISITO 7: AJUSTE DOS LINKS DO MENU
+---------------------------------------------*/
+/* Altera os links para ficarem brancos e sem o sublinhado */
+nav a, 
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Efeito :hover - Muda de cor quando passa o mouse por cima */
+nav a:hover, 
+a:hover {
+    color: #3498db; /* Muda para o mesmo azul do seu rodapé */
 }
