@@ -1,91 +1,93 @@
-8
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página Pessoal</title>
+    <title>Página Pessoal - Larissa Lamara</title>
+    <!-- Vinculando a folha de estilos externa -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Larissa Iamara</h1>
-       <p>Graduanda de Pedagogia...
+    <!-- Cabeçalho da página -->
+    <header class="cabecalho-principal">
+        <h1>Larissa Lamara</h1>
+        <p class="subtitulo">Graduanda de Pedagogia &amp; Estudante de Programação Web</p>
+        
+        <!-- Navegação (Exigência do Item 7) -->
+        <nav class="menu-navegacao">
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.html"> | 
-        <a href="sobre.html">
-    </nav>
-
-    <main>
-  <section>
-           <h2>Bem-vindos à minha página pessoal!</h2>
-            <p>
-                Meu nome é Larissa Iamara e sou graduanda de Pedagogia, além de estudante de
-                Programação Web. Acredito firmemente que a área da Pedagogia será muito
-                utilizada e fará uma grande diferença na minha vida acadêmica. Gosto muito de
-                estudar, aprender novas tecnologias e estou desenvolvendo este site semântico
-                para a minha atividade acadêmica.
-            </p>
+    <main class="conteudo-principal">
+        
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="secao-perfil">
+            <h2>Bem-vindos à minha página pessoal!</h2>
+            <div class="perfil-container">
+                <p class="texto-introducao">
+                    Meu nome é Larissa Lamara e sou graduanda de Pedagogia, além de estudante de Programação Web. 
+                    Acredito firmemente que a área da Pedagogia será muito utilizada e fará uma grande diferença na minha vida acadêmica. 
+                    Gosto muito de estudar, aprender novas tecnologias e estou desenvolvendo este site semântico para a minha atividade acadêmica.
+                </p>
+                
+                <!-- Ajustado exatamente para puxar o seu arquivo 'foto.jpg' do GitHub -->
+                <img src="foto.jpg" alt="Foto de Larissa Lamara" class="foto-perfil">
+            </div>
         </section>
 
-        <!-- LISTA DE HOBBIES QUE O PROFESSOR PEDIU -->
-        <section style="margin-top: 30px;">
-            <h3 style="color: #c2185b;">Meus Hobbies e Interesses</h3>
-            <ul>
+        <!-- Listas de interesses com classe para estilizar -->
+        <section id="hobbies" class="secao-hobbies">
+            <h2>Meus Hobbies e Interesses</h2>
+            <ul class="lista-interesses">
                 <li>Estudar novas tecnologias aplicadas à educação</li>
                 <li>Ler livros de Pedagogia e desenvolvimento infantil</li>
                 <li>Praticar programação web</li>
             </ul>
         </section>
 
-        <section style="text-align: center; margin-top: 30px;">
-            <!-- Ajustado para procurar na pasta 'img' ou direto se ainda não criou a pasta -->
-            <img src="foto.jpg" alt="Foto de Larissa Iamara" style="max-width: 100%; height: auto; border-radius: 10px; max-height: 400px;">
+        <!-- Formulário de contato com diferenciação visual -->
+        <section id="contato" class="secao-contato">
+            <h2>Entre em contato</h2>
+            
+            <form action="#" method="POST" class="formulario-contato">
+                <fieldset>
+                    <legend>Formulário de contato</legend>
+
+                    <div class="grupo-campo">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="assunto">Assunto:</label>
+                        <input type="text" id="assunto" name="assunto" required placeholder="Motivo do contato">
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                    </div>
+
+                    <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+                </fieldset>
+            </form>
         </section>
+
     </main>
 
-    <!-- RODAPÉ QUE O PROFESSOR PEDIU -->
-    <footer style="background-color: #333; color: white; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9em;">
-        <p>&copy; 2026 Larissa Iamara. Todos os direitos reservados.</p>
-        <p>Acesse meu perfil no <a href="https://github.com" style="color: #ff4081; text-decoration: none;">GitHub</a></p>
+    <!-- Rodapé diferenciado -->
+    <footer class="rodape-principal">
+        <p>&copy; 2026 Larissa Lamara - Atividade de Programação Web I - IF Sudeste MG Campus Barbacena</p>
     </footer>
-
-<section id="contato">
-    <h2>Entre em contato</h2>
-
-    <form>
-        <fieldset>
-            <legend>Formulário de contato</legend>
-
-            <p>
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required>
-            </p>
-
-            <p>
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required>
-            </p>
-
-            <p>
-                <label for="assunto">Assunto:</label><br>
-                <input type="text" id="assunto" name="assunto" required>
-            </p>
-
-            <p>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem"
-                    rows="5" required></textarea>
-            </p>
-
-            <button type="submit">Enviar</button>
-            <button type="reset">Limpar</button>
-        </fieldset>
-    </form>
-</section>
 
 </body>
 </html>
