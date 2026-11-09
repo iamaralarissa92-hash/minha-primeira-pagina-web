@@ -1,251 +1,160 @@
-/* ==========================================
-   REQUISITO 1 & 6: CONFIGURAÇÕES GERAIS E ESPAÇAMENTOS
-   ========================================== */
+/* Reset Geral e Identação limpa */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Impede que paddings quebrem as dimensões */
-}
-
-/* Requisito 3: Definindo fonte e cor padrão para os textos da página */
-body {
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
-    color: #2c3e50;
-    line-height: 1.6;
 }
 
-/* Requisito 6: Controlando dimensões e margens do conteúdo central */
-.conteudo-principal {
-    max-width: 800px;
-    width: 90%;
-    margin: 30px auto; /* Centraliza a página na tela */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
 }
 
-/* ==========================================
-   REQUISITO 2 & 7: CABEÇALHO, TÍTULOS E NAVEGAÇÃO
-   ========================================== */
-
-/* Cores de fundo e texto para o cabeçalho */
-.cabecalho-principal {
-    background-color: #1a2a3a; /* Azul escuro elegante */
-    color: #ffffff;
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 4px solid #3498db;
+/* ==========================================================================
+   4. REQUISITO: Aplicação dos conceitos de Grid Global na página
+   ========================================================================== */
+.page-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr; /* Coluna do menu lateral e coluna do conteúdo principal */
+    grid-template-rows: auto auto auto; /* Linhas adaptáveis para header, main e footer */
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-/* Requisito 2: Personalização do H1 */
-.cabecalho-principal h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+/* REQUISITO: Modificando posicionamento (elementos ocupando mais de uma coluna) */
+.cabecalho {
+    grid-column: 1 / -1; /* Ocupa da primeira à última coluna (largura total) */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.subtitulo {
-    font-size: 1.1rem;
-    color: #bdc3c7;
-    margin-bottom: 20px;
+.navegacao {
+    grid-column: 1 / 2; /* Fica estritamente na barra lateral esquerda */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* Requisito 2: Personalização geral do H2 */
-h2 {
-    font-size: 1.8rem;
-    color: #1a2a3a;
-    margin-bottom: 15px;
-    border-left: 5px solid #3498db;
-    padding-left: 10px;
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Requisito 7: Links de navegação */
-.menu-navegacao a {
-    color: #ffffff;
+.navegacao a {
     text-decoration: none;
-    margin: 0 15px;
+    color: #555;
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
-/* Requisito 7: Pseudoclasse :hover */
-.menu-navegacao a:hover {
-    color: #3498db; /* Muda de cor ao passar o mouse */
-    text-decoration: underline;
+.conteudo-principal {
+    grid-column: 2 / 3; /* Ocupa o espaço principal restante da direita */
 }
 
-/* ==========================================
-   REQUISITO 3: CONTEÚDO, PARÁGRAFOS E LISTAS
-   ========================================== */
+.rodape {
+    grid-column: 1 / -1; /* Ocupa toda a largura no rodapé */
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+}
 
-/* Organização em bloco lado a lado (texto + imagem) */
-.perfil-container {
+/* ==========================================================================
+   Organização dos Cartões Internos (Grid e Flexbox conforme imagem)
+   ========================================================================== */
+.secao-titulo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.secao-subtitulo {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+/* Container dos Cards em Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Organização Interna do Cartão com Flexbox */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    
+    /* Configuração Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+/* Cabeçalho do Card (Alinhamento em linha com Flexbox) */
+.card-header-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-titulo {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.card-texto {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.5;
+    flex-grow: 1; /* Força o alinhamento inferior das tags */
+}
+
+/* Espaçamento e Flexbox para o grupo de tags */
+.card-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    margin-top: 20px;
+    gap: 6px;
 }
 
-/* Requisito 3: Customização do parágrafo */
-.texto-introducao {
-    flex: 1;
-    min-width: 280px;
-    font-size: 1.05rem;
-    text-align: justify;
-}
-
-/* Requisito 6: Diferenciando uma seção específica com cor e borda */
-.secao-hobbies {
-    background-color: #ffffff;
-    padding: 25px;
-    margin: 30px 0;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-}
-
-/* Requisito 3: Personalizando a lista de interesses com boa legibilidade */
-.lista-interesses {
-    list-style-type: square; /* Marcador quadrado */
-    margin-left: 25px;
-}
-
-.lista-interesses li {
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #34495e; /* Tom escuro para garantir ótimo contraste no fundo branco */
-}
-
-/* ==========================================
-   REQUISITO 4: IMAGEM PESSOAL
-   ========================================== */
-.foto-perfil {
-    /* Definindo as dimensões usando width e height */
-    width: 180px;
-    height: 180px;
-    object-fit: cover; /* Evita que a foto fique distorcida */
-    
-    /* Aplicando propriedade border e border-radius */
-    border: 4px solid #ffffff;
-    border-radius: 50%; /* Deixa a imagem redondinha e muito polida */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* ==========================================
-   REQUISITO 5 & 6: FORMULÁRIO DE CONTATO
-   ========================================== */
-
-/* Diferenciando visualmente a área do formulário */
-.secao-contato {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.formulario-contato fieldset {
-    border: 1px dashed #cbd5e1; /* Borda tracejada conforme o design */
-    padding: 20px;
+.tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
     border-radius: 6px;
 }
 
-.formulario-contato legend {
-    padding: 0 10px;
-    color: #64748b;
-    font-size: 0.9rem;
-}
+/* Cores customizadas baseadas na paleta da imagem */
+.azul { color: #2563eb; background-color: #eff6ff; }
+.tag-azul { color: #1d4ed8; background-color: #dbeafe; }
 
-/* Requisito 6: Espaçamentos internos usando margin */
-.grupo-campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px; /* Controla o espaço entre os componentes */
-}
+.roxo { color: #7c3aed; background-color: #f5f3ff; }
+.tag-roxo { color: #6d28d9; background-color: #ede9fe; }
 
-.grupo-campo label {
-    margin-bottom: 5px;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
+.verde { color: #16a34a; background-color: #f0fdf4; }
+.tag-verde { color: #15803d; background-color: #dcfce7; }
 
-/* Requisito 5: Personalização detalhada de input e textarea */
-.formulario-contato input, 
-.formulario-contato textarea {
-    padding: 12px;             /* Propriedade padding exigida */
-    border: 1px solid #cbd5e1; /* Propriedade border exigida */
-    margin-top: 2px;           /* Propriedade margin exigida */
-    border-radius: 4px;
-    font-size: 1rem;
-    width: 100%;               /* Controlando as dimensões (Requisito 6) */
-}
+.laranja { color: #ea580c; background-color: #fff7ed; }
+.tag-laranja { color: #c2410c; background-color: #ffedd5; }
 
-/* Efeito de foco profissional nos campos */
-.formulario-contato input:focus, 
-.formulario-contato textarea:focus {
-    border-color: #3498db;
-    outline: none;
-}
+.azul-claro { color: #0284c7; background-color: #f0f9ff; }
+.tag-azul-claro { color: #0369a1; background-color: #e0f2fe; }
 
-/* Estilo do botão de envio */
-.botao-enviar {
-    background-color: #3498db;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    width: 100%;
-    margin-top: 10px;
-    transition: background-color 0.2s ease;
-}
-
-.botao-enviar:hover {
-    background-color: #2980b9;
-}
-
-/* ==========================================
-   REQUISITO 7: RODAPÉ
-   ========================================== */
-.rodape-principal {
-    background-color: #1a2a3a; /* Mesmo tom do cabeçalho para coerência */
-    color: #94a3b8;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    font-size: 0.85rem
-       border-top: 4px solid #3498db;
-}/*---------------------------------------------
-    REQUISITO 5: FORMULÁRIO DE CONTATO
----------------------------------------------*/
-input[type="text"], 
-input[type="email"], 
-textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-input:focus, 
-textarea:focus {
-    border-color: #3498db;
-    outline: none;
-}/*---------------------------------------------
-    REQUISITO 7: AJUSTE DOS LINKS DO MENU
----------------------------------------------*/
-/* Altera os links para ficarem brancos e sem o sublinhado */
-nav a, 
-a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-/* Efeito :hover - Muda de cor quando passa o mouse por cima */
-nav a:hover, 
-a:hover {
-    color: #3498db; /* Muda para o mesmo azul do seu rodapé */
-}
+.rosa { color: #db2777; background-color: #fdf2f8; }
+.tag-rosa { color: #be185d; background-color: #fce7f3; }
