@@ -9,85 +9,124 @@
 </head>
 <body>
 
-    <!-- Cabeçalho da página -->
-    <header class="cabecalho-principal">
-        <h1>Larissa Iamara</h1>
-        <p class="subtitulo">Graduanda de Pedagogia &amp; Estudante de Programação Web</p>
+    <!-- CONTAINER PRINCIPAL DA PÁGINA (Aplica o Grid Global) -->
+    <div class="page-grid">
         
-        <!-- Navegação (Exigência do Item 7) -->
-        <nav class="menu-navegacao">
-            <a href="#sobre">Sobre Mim</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+        <!-- Cabeçalho da página (Mantido o seu original corrigido) -->
+        <header class="cabecalho">
+            <h1>Larissa Iamara</h1>
+            <p class="subtitulo">Graduanda de Pedagogia | Estudante de Programação Web</p>
+        </header>
 
-    <main class="conteudo-principal">
-        
-        <!-- Seção Sobre Mim -->
-        <section id="sobre" class="secao-perfil">
-            <h2>Bem-vindos à minha página pessoal!</h2>
-            <div class="perfil-container">
-                <p class="texto-introducao">
-                    Meu nome é Larissa Iamara e sou graduanda de Pedagogia, além de estudante de Programação Web. 
-                    Acredito firmemente que a área da Pedagogia será muito utilizada e fará uma grande diferença na minha vida acadêmica. 
-                    Gosto muito de estudar, aprender novas tecnologias e estou desenvolvendo este site semântico para a minha atividade acadêmica.
-                </p>
-                
-                <!-- Ajustado exatamente para puxar o seu arquivo 'foto.jpg' do GitHub -->
-                <img src="foto.jpg" alt="Foto de Larissa Iamara" class="foto-perfil">
-            </div>
-        </section>
-
-        <!-- Listas de interesses com classe para estilizar -->
-        <section id="hobbies" class="secao-hobbies">
-            <h2>Meus Hobbies e Interesses</h2>
-            <ul class="lista-interesses">
-                <li>Estudar novas tecnologias aplicadas à educação</li>
-                <li>Ler livros de Pedagogia e desenvolvimento infantil</li>
-                <li>Praticar programação web</li>
+        <!-- Navegação (Mantida a sua original adaptada para o Grid) -->
+        <nav class="navegacao">
+            <ul>
+                <li><a href="#Sobre-Mim">Sobre Mim</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#Contato">Contato</a></li>
             </ul>
-        </section>
+        </nav>
 
-        <!-- Formulário de contato com diferenciação visual -->
-        <section id="contato" class="secao-contato">
-            <h2>Entre em contato</h2>
-            
-            <form action="#" method="POST" class="formulario-contato">
-                <fieldset>
-                    <legend>Formulário de contato</legend>
+        <!-- Conteúdo Principal com a nova seção da atividade -->
+        <main class="conteudo-principal">
+            <section id="tecnologias" class="tecnologias-interesses">
+                <h2 class="secao-titulo">Tecnologias e Interesses</h2>
+                <p class="secao-subtitulo">Tecnologias, ferramentas e áreas que estudo e tenho interesse.</p>
 
-                    <div class="grupo-campo">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
-                    </div>
+                <!-- Grid interno dos cartões (Exatamente como a imagem da atividade pede) -->
+                <div class="grid-container">
+                    
+                    <!-- Cartão 1: Desenvolvimento Web -->
+                    <article class="card">
+                        <div class="card-header-container">
+                            <span class="card-icone azul">&lt;/&gt;</span>
+                            <h3 class="card-titulo">Desenvolvimento Web</h3>
+                        </div>
+                        <p class="card-texto">Criação de sites e aplicações Web com HTML, CSS e JavaScript.</p>
+                        <div class="card-tags">
+                            <span class="tag tag-azul">HTML</span>
+                            <span class="tag tag-azul">CSS</span>
+                            <span class="tag tag-azul">JavaScript</span>
+                        </div>
+                    </article>
 
-                    <div class="grupo-campo">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
-                    </div>
+                    <!-- Cartão 2: Java -->
+                    <article class="card">
+                        <div class="card-header-container">
+                            <span class="card-icone roxo">☕</span>
+                            <h3 class="card-titulo">Java</h3>
+                        </div>
+                        <p class="card-texto">Desenvolvimento de aplicações back-end, com foco em qualidade e boas práticas.</p>
+                        <div class="card-tags">
+                            <span class="tag tag-roxo">Java</span>
+                            <span class="tag tag-roxo">Spring</span>
+                            <span class="tag tag-roxo">JPA</span>
+                        </div>
+                    </article>
 
-                    <div class="grupo-campo">
-                        <label for="assunto">Assunto:</label>
-                        <input type="text" id="assunto" name="assunto" required placeholder="Motivo do contato">
-                    </div>
+                    <!-- Cartão 3: Banco de Dados -->
+                    <article class="card">
+                        <div class="card-header-container">
+                            <span class="card-icone verde">🗄️</span>
+                            <h3 class="card-titulo">Banco de Dados</h3>
+                        </div>
+                        <p class="card-texto">Modelagem, consulta e persistência de dados em aplicações.</p>
+                        <div class="card-tags">
+                            <span class="tag tag-verde">PostgreSQL</span>
+                            <span class="tag tag-verde">MySQL</span>
+                        </div>
+                    </article>
 
-                    <div class="grupo-campo">
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
-                    </div>
+                    <!-- Cartão 4: Controle de Versão -->
+                    <article class="card">
+                        <div class="card-header-container">
+                            <span class="card-icone laranja">🌿</span>
+                            <h3 class="card-titulo">Controle de Versão</h3>
+                        </div>
+                        <p class="card-texto">Versionamento de código, colaboração e organização de projetos.</p>
+                        <div class="card-tags">
+                            <span class="tag tag-laranja">Git</span>
+                            <span class="tag tag-laranja">GitHub</span>
+                        </div>
+                    </article>
 
-                    <button type="submit" class="botao-enviar">Enviar Mensagem</button>
-                </fieldset>
-            </form>
-        </section>
+                    <!-- Cartão 5: Engenharia de Software -->
+                    <article class="card">
+                        <div class="card-header-container">
+                            <span class="card-icone azul-claro">📊</span>
+                            <h3 class="card-titulo">Engenharia de Software</h3>
+                        </div>
+                        <p class="card-texto">Interesse em qualidade de software, manutenção e evolução de sistemas.</p>
+                        <div class="card-tags">
+                            <span class="tag tag-azul-claro">Qualidade</span>
+                            <span class="tag tag-azul-claro">Refatoração</span>
+                        </div>
+                    </article>
 
-    </main>
+                    <!-- Cartão 6: Ciclismo -->
+                    <article class="card">
+                        <div class="card-header-container">
+                            <span class="card-icone rosa">🚴</span>
+                            <h3 class="card-titulo">Ciclismo</h3>
+                        </div>
+                        <p class="card-texto">Prática de ciclismo de estrada e MTB, com foco em performance e bem-estar.</p>
+                        <div class="card-tags">
+                            <span class="tag tag-rosa">Ciclismo</span>
+                            <span class="tag tag-rosa">Treino</span>
+                            <span class="tag tag-rosa">Saúde</span>
+                        </div>
+                    </article>
 
-    <!-- Rodapé diferenciado -->
-    <footer class="rodape-principal">
-        <p>&copy; 2026 Larissa Iamara - Atividade de Programação Web I - IF Sudeste MG Campus Barbacena</p>
-    </footer>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé do Grid Global -->
+        <footer class="rodape">
+            <p>&copy; 2026 - Larissa Iamara. Atividade IFNMG.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
