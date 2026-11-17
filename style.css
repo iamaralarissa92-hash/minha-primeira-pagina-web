@@ -19,7 +19,7 @@ body {
    ========================================================================== */
 .page-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 coluna no celular (tudo empilhado) */
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 20px;
     max-width: 1300px;
@@ -33,6 +33,12 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+.subtitulo {
+    font-size: 15px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
 .navegacao {
     background-color: #fff;
     padding: 20px;
@@ -40,12 +46,11 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-/* Transforma o menu lateral em uma barra horizontal prática no celular */
 .navegacao ul {
     list-style: none;
     display: flex;
-    flex-direction: row; /* Itens lado a lado no celular */
-    flex-wrap: wrap;     /* Quebra de linha se a tela for muito estreita */
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
 }
@@ -54,6 +59,11 @@ body {
     text-decoration: none;
     color: #555;
     font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navegacao a:hover {
+    color: #2563eb;
 }
 
 .conteudo-principal {
@@ -73,29 +83,29 @@ body {
    ========================================================================== */
 @media screen and (min-width: 768px) {
     .page-grid {
-        grid-template-columns: 240px 1fr; /* Ativa as duas colunas (Menu lateral + Conteúdo) */
+        grid-template-columns: 240px 1fr;
         grid-template-rows: auto auto auto;
     }
 
     .cabecalho {
-        grid-column: 1 / -1; /* Ocupa a largura total na parte superior */
+        grid-column: 1 / -1;
     }
 
     .navegacao {
-        grid-column: 1 / 2; /* Fixa o menu estritamente na barra lateral esquerda */
+        grid-column: 1 / 2;
     }
 
     .navegacao ul {
-        flex-direction: column; /* Menu volta a ficar empilhado verticalmente */
+        flex-direction: column;
         justify-content: flex-start;
     }
 
     .conteudo-principal {
-        grid-column: 2 / 3; /* Ocupa o espaço principal restante à direita */
+        grid-column: 2 / 3;
     }
 
     .rodape {
-        grid-column: 1 / -1; /* Ocupa toda a largura na parte inferior */
+        grid-column: 1 / -1;
     }
 }
 
@@ -115,21 +125,18 @@ body {
     margin-bottom: 24px;
 }
 
-/* Container dos Cards em Grid Inteligente */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-/* Organização Interna do Cartão com Flexbox */
 .card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -137,11 +144,21 @@ body {
     gap: 14px;
 }
 
-/* Cabeçalho do Card */
 .card-header-container {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.card-icone {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 .card-titulo {
@@ -153,12 +170,10 @@ body {
 .card-texto {
     font-size: 13.5px;
     color: #475569;
-    line-height: 1.5;  color: #475569;
     line-height: 1.5;
-    flex-grow: 1; /* Alinha as tags na base do cartão */
+    flex-grow: 1;
 }
 
-/* Espaçamento e Flexbox para o grupo de tags */
 .card-tags {
     display: flex;
     flex-wrap: wrap;
