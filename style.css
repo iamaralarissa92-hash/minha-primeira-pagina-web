@@ -1,4 +1,6 @@
-/* Reset Geral e Identação limpa */
+/* ==========================================================================
+   1. Reset Geral e Identação limpa
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -13,20 +15,18 @@ body {
 }
 
 /* ==========================================================================
-   4. REQUISITO: Aplicação dos conceitos de Grid Global na página
+   2. Grid Global - Estrutura Base para Celular (Mobile-First)
    ========================================================================== */
 .page-grid {
     display: grid;
-    grid-template-columns: 240px 1fr; /* Coluna do menu lateral e coluna do conteúdo principal */
-    grid-template-rows: auto auto auto; /* Linhas adaptáveis para header, main e footer */
+    grid-template-columns: 1fr; /* 1 coluna no celular (tudo empilhado) */
+    grid-template-rows: auto;
     gap: 20px;
     max-width: 1300px;
     margin: 0 auto;
 }
 
-/* REQUISITO: Modificando posicionamento (elementos ocupando mais de uma coluna) */
 .cabecalho {
-    grid-column: 1 / -1; /* Ocupa da primeira à última coluna (largura total) */
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
@@ -34,18 +34,20 @@ body {
 }
 
 .navegacao {
-    grid-column: 1 / 2; /* Fica estritamente na barra lateral esquerda */
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+/* Transforma o menu lateral em uma barra horizontal prática no celular */
 .navegacao ul {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Itens lado a lado no celular */
+    flex-wrap: wrap;     /* Quebra de linha se a tela for muito estreita */
     gap: 15px;
+    justify-content: center;
 }
 
 .navegacao a {
@@ -55,11 +57,10 @@ body {
 }
 
 .conteudo-principal {
-    grid-column: 2 / 3; /* Ocupa o espaço principal restante da direita */
+    width: 100%;
 }
 
 .rodape {
-    grid-column: 1 / -1; /* Ocupa toda a largura no rodapé */
     background-color: #222;
     color: #fff;
     text-align: center;
@@ -68,7 +69,38 @@ body {
 }
 
 /* ==========================================================================
-   Organização dos Cartões Internos (Grid e Flexbox conforme imagem)
+   3. Media Query - Adaptação para Computadores (A partir de 768px)
+   ========================================================================== */
+@media screen and (min-width: 768px) {
+    .page-grid {
+        grid-template-columns: 240px 1fr; /* Ativa as duas colunas (Menu lateral + Conteúdo) */
+        grid-template-rows: auto auto auto;
+    }
+
+    .cabecalho {
+        grid-column: 1 / -1; /* Ocupa a largura total na parte superior */
+    }
+
+    .navegacao {
+        grid-column: 1 / 2; /* Fixa o menu estritamente na barra lateral esquerda */
+    }
+
+    .navegacao ul {
+        flex-direction: column; /* Menu volta a ficar empilhado verticalmente */
+        justify-content: flex-start;
+    }
+
+    .conteudo-principal {
+        grid-column: 2 / 3; /* Ocupa o espaço principal restante à direita */
+    }
+
+    .rodape {
+        grid-column: 1 / -1; /* Ocupa toda a largura na parte inferior */
+    }
+}
+
+/* ==========================================================================
+   4. Organização dos Cartões Internos (Grid e Flexbox)
    ========================================================================== */
 .secao-titulo {
     font-size: 24px;
@@ -83,7 +115,7 @@ body {
     margin-bottom: 24px;
 }
 
-/* Container dos Cards em Grid */
+/* Container dos Cards em Grid Inteligente */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -98,7 +130,6 @@ body {
     padding: 20px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     
-    /* Configuração Flexbox */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -106,7 +137,7 @@ body {
     gap: 14px;
 }
 
-/* Cabeçalho do Card (Alinhamento em linha com Flexbox) */
+/* Cabeçalho do Card */
 .card-header-container {
     display: flex;
     align-items: center;
@@ -122,8 +153,9 @@ body {
 .card-texto {
     font-size: 13.5px;
     color: #475569;
+    line-height: 1.5;  color: #475569;
     line-height: 1.5;
-    flex-grow: 1; /* Força o alinhamento inferior das tags */
+    flex-grow: 1; /* Alinha as tags na base do cartão */
 }
 
 /* Espaçamento e Flexbox para o grupo de tags */
@@ -140,7 +172,9 @@ body {
     border-radius: 6px;
 }
 
-/* Cores customizadas baseadas na paleta da imagem */
+/* ==========================================================================
+   5. Paleta de Cores Customizada
+   ========================================================================== */
 .azul { color: #2563eb; background-color: #eff6ff; }
 .tag-azul { color: #1d4ed8; background-color: #dbeafe; }
 
